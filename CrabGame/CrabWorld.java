@@ -26,14 +26,21 @@ public class CrabWorld extends World
      */
     private void prepare()
     {
-        // Crab 1마리 (231, 203) 좌표에 추가
+        addObject( new Crab(),231, 203);// Crab 1마리 (231, 203) 좌표에 추가
         
-        // Worm 10마리 랜덤 좌표에 추가
+        for (int i = 0; i <=10; i++)// Worm 10마리 랜덤 좌표에 추가
+        {
+            addObject( new Worm(), Greenfoot.getRandomNumber(560), Greenfoot.getRandomNumber(560));
+        }
         
-        // Lobster 3마리 추가
-        // 각 좌표는 (334, 65), (481, 481), (79, 270)
-        
+        addObject( new Lobster(),334, 65);// Lobster 3마리 추가 /각 좌표는 (334, 65), (481, 481), (79, 270)
+        addObject( new Lobster(),481, 481);
+        addObject( new Lobster(), 79, 270);
+        addObject( new Turtle(100), Greenfoot.getRandomNumber(560), Greenfoot.getRandomNumber(560));
         // 100을 세고 움직이는 Turtle 추가
         // 좌표는 랜덤
+        
+       
+        
     }
 }

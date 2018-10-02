@@ -14,7 +14,6 @@ public class Lobster extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
         // 모서리에서 회전
         turnAtEdge();
         // 이동하면서 랜덤으로 회전
@@ -29,10 +28,16 @@ public class Lobster extends Actor
      * Check whether we are at the edge of the world. If we are, turn a bit.
      * If not, do nothing.
      */
+    
+    
+    
     public void turnAtEdge()
     {
-        // 만약 모서리에 있다면
-        // 17정도 회전
+         if ( isAtEdge() ) // 만약 모서리에 있다면
+        {
+            turn(17);// 17정도 회전
+        }
+        
     }
     
     /**
@@ -54,10 +59,16 @@ public class Lobster extends Actor
      */
     public void lookForCrab()
     {
-        // Crab과 닿으면
-        // Crab을 제거
-        // au.wav 음악 재생
-        // Oops! 문구 표시
-        // Greenfoot.stop();
+        if ( isTouching(Crab.class) ) // Crab과 닿으면
+        {
+            removeTouching(Crab.class);// Crab을 제거
+            Greenfoot.playSound("au.wav");// au.wav 음악 재생
+            getWorld().showText("Oops!",300,300); // Oops! 문구 표시
+            Greenfoot.stop();// Greenfoot.stop();
+        }
+        
+        
+        
+        
     }    
 }
